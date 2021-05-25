@@ -1,6 +1,10 @@
 # spatialDmelsim
 
-Allelic counts from Combs & Fraser (2018), compiled into a *SummarizedExperiment* object.
+Allelic counts from Combs & Fraser (2018), compiled into a
+*SummarizedExperiment* object.
+
+Here, `a1` assay is the *D simulans* allelic count, `a2` assay is the
+*D melanogaster* allelic count.
 
 Data downloaded from `GSE102233` as described in the publication:
 

@@ -4,6 +4,8 @@ se
 library(org.Dm.eg.db)
 mcols(se)$symbol <- mapIds(org.Dm.eg.db, rownames(se), "SYMBOL", "ENSEMBL")
 rownames(se) <- mcols(se)$symbol
+# a1 = D simulans
+# a2 = D melanogaster
 assay(se, "total") <- assay(se, "a1") + assay(se, "a2") 
 assay(se, "ratio") <- assay(se, "a1") / assay(se, "total")
 plotGene <- function(gene) {
