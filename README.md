@@ -16,8 +16,9 @@ Data downloaded from `GSE102233` as described in the publication:
 
 ## R scripts
 
-* Script to build the SummarizedExperiment: `script.R`
-* Demo of loading the data and calculating ratio: `demo.R`
+* Script to build the *SummarizedExperiment*: `inst/scripts/make-data.R`
+* Demo of loading the data and calculating allelic ratio: 
+  `vignettes/spatialDmelxsim.Rmd`
 
 ## Example figures of allelic ratio (simulans / total):
 
