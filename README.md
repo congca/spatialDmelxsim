@@ -1,4 +1,4 @@
-# spatialDmelsim
+# spatialDmelxsim
 
 Allelic counts from Combs & Fraser (2018), compiled into a
 *SummarizedExperiment* object.
@@ -21,7 +21,6 @@ Data downloaded from `GSE102233` as described in the publication:
 
 ## Example figures of allelic ratio (simulans / total):
 
-![slam](fig/slam.png)
+![slam](man/figures/slam.png)
 
-![uif](fig/uif.png)
-
+![uif](man/figures/uif.png)

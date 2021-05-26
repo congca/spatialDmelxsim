@@ -1,13 +1,40 @@
-load("combs_fraser.rda")
+---
+title: "spatialDmelxsim"
+author: "Michael Love"
+output: BiocStyle::html_document
+date: "`r doc_date()`"
+package: "`r pkg_ver('spatialDmelxsim')`"
+vignette: >
+  %\VignetteIndexEntry{spatialDmelxsim}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+# Allelic counts of D melanogaster D simulans cross
+
+```{r}
+load("../combs_fraser.rda")
 suppressPackageStartupMessages(library(SummarizedExperiment))
 se
+```
+
+```{r}
 library(org.Dm.eg.db)
 mcols(se)$symbol <- mapIds(org.Dm.eg.db, rownames(se), "SYMBOL", "ENSEMBL")
 rownames(se) <- mcols(se)$symbol
-# a1 = D simulans
-# a2 = D melanogaster
+```
+
+Note we use the following annotation of alleles:
+
+* a1: *D simulans*
+* a2: *D melanogaster*
+
+```{r}
 assay(se, "total") <- assay(se, "a1") + assay(se, "a2") 
 assay(se, "ratio") <- assay(se, "a1") / assay(se, "total")
+```
+
+```{r}
 plotGene <- function(gene) {
   x <- se$slice
   # deal with diff number of slices
@@ -19,9 +46,16 @@ plotGene <- function(gene) {
   lines(sort(lw$x), lw$fitted[order(lw$x)], col="red", lwd=2)
   abline(h=0.5, col="grey")
 }
-png(file="fig/slam.png")
+```
+
+```{r slam}
 plotGene("slam")
-dev.off()
-png(file="fig/uif.png")
+```
+
+```{r uif}
 plotGene("uif")
-dev.off()
+```
+
+```{r}
+sessionInfo()
+```

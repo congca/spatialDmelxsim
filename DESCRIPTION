@@ -1,0 +1,22 @@
+Package: spatialDmelxsim
+Title: Spatial allelic expression counts for fly cross embryo
+Version: 0.99.0
+Authors@R: person(given = "Michael",
+           family = "Love",
+           role = c("aut", "cre"),
+           email = "michaelisaiahlove@gmail.com")
+Description: Spatial allelic expression counts from Combs & Fraser (2018),
+    compiled into a SummarizedExperiment object. See CITATION file for
+    details on the data source.
+License: MIT
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+URL: https://github.com/mikelove/spatialDmelxsim
+BugReports: https://github.com/mikelove/spatialDmelxsim/issues
+Suggests: 
+    knitr,
+    rmarkdown
+VignetteBuilder: knitr
+biocViews: ExperimentHub
